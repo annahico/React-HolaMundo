@@ -34,7 +34,12 @@
 // }
 // export default Card;
 
-function Card() {
+interface Props {
+  body: string;
+}
+
+function Card(props: Props) {
+  const { body } = props;
   // const width = {
   //   width: "350px",
   // };
@@ -47,9 +52,7 @@ function Card() {
         width: "350px",
       }}
     >
-      <div className="card-body">
-        <CardBody />
-      </div>
+      <div className="card-body">{body}</div>
     </div>
   );
 }
