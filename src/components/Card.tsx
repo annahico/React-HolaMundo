@@ -1,5 +1,7 @@
 // import { Fragment } from "react";
 
+import { ReactNode } from "react";
+
 // function Card() {
 //   // const width = {
 //   //   width: "350px",
@@ -35,11 +37,11 @@
 // export default Card;
 
 interface Props {
-  body: string;
+  children: ReactNode;
 }
 
 function Card(props: Props) {
-  const { body } = props;
+  const { children } = props; //usamos CHILDREN porque es una propiedad especial para cuandso estamos pasando las propiedades
   // const width = {
   //   width: "350px",
   // };
@@ -52,7 +54,7 @@ function Card(props: Props) {
         width: "350px",
       }}
     >
-      <div className="card-body">{body}</div>
+      <div className="card-body">{children}</div>
     </div>
   );
 }
